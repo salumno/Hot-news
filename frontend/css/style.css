@@ -1,0 +1,12 @@
+.title{
+    text-align: center;
+    /*border: 2px solid;*/
+}
+ul {
+    list-style-type: none;
+}
+.news li{
+    /*border: 2px solid;*/
+    padding: 20px;
+    margin: 5px;
+}
