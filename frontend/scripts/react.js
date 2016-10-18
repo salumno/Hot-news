@@ -4,6 +4,10 @@
  *
  */
 
+var data = [
+    {id: 1, author: "Pete Hunt", text: "This is one news"},
+    {id: 2, author: "Michael Jordan", text: "This is another news"} /*чуть чуть JSON*/
+];
 
 var HotNewsBox = React.createClass({ // Создаем лишь часть большой структуры. React знает, как ей управлять.
     render: function () {
@@ -11,20 +15,27 @@ var HotNewsBox = React.createClass({ // Создаем лишь часть бо�
             <div className="hotNewsBox">
                 Hello, world! Imma HotNewsBox!
                 <h1>HotNews</h1>  /*Оболочка познакомилась со своими компонентами*/
-                <HotNewsList />
-                <HotNewsForm />
+                <HotNewsList data={this.props.data}/> /*Положили в список наши данные?*/
+                <HotNewsForm /> /*в ячейку HotNewsList'a data положили значение data-массива*/
             </div>
         );
     }
 });
 
 var HotNewsList = React.createClass({
-    render: function () {
+    render: function () { /*Массив получаем с помощью this.props.data*/
+        var newsNode = this.props.data.map(function (hotNews) { /*Получаем новый массив, состоящий из React элементов*/
+            return (
+                <HotNews author={hotNews.author} key={hotNews.id}> /*???*/
+                    {hotNews.text}
+                 </HotNews>
+            );
+        });
+
         return (
             <div className="hotNewsList">
                 Hello! I'm HotNewsList!
-                <HotNews author="Vasya">This is one comment</HotNews> /*Добавлены 2 новости. Компонент HotNews получает к ним доступ через this.props*/
-                <HotNews author="Sasha">This is another comment</HotNews> /*this.props.author - к автору. this.props.children - к вложенному тексту*/
+                {newsNode}
             </div>
         );
     }
@@ -55,6 +66,6 @@ var HotNews = React.createClass({
 });
 
 ReactDOM.render( // Всегда внизу, запускаем только когда все компоненты определены.
-    <HotNewsBox />, // Рендерим оболочку всей нашей структуры
+    <HotNewsBox data={data} />, // Рендерим оболочку всей нашей структуры.
     document.getElementsById('content')
 );
