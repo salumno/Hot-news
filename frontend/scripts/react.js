@@ -98,7 +98,7 @@ var HotNewsForm = React.createClass({
     },
 
     hundleSubmit: function (e) {
-        e.preventDefault(); /*Говорим браузеру, что делать мы. Метод останавливает стандартные действия браузера*/
+        e.preventDefault(); /*Говорим браузеру, что делать, мы. Метод останавливает стандартные действия браузера*/
         var author = this.state.author.trim(); /*Убираем незначащие пробелы*/
         var text = this.state.text.trim();
         if (!text || !author) { /*Если какая-то из строчек пустая, форма некорректная - выходим*/
