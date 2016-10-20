@@ -25,6 +25,21 @@ var HotNewsBox = React.createClass({ // Создаем лишь часть бо�
         });
     },
 
+    handleNewsSubmit: function () {
+        $.ajax({
+            url: this.props.url,
+            dataType: 'json',
+            type: 'POST',
+            data: hotNews,
+            success: function (data) {
+                this.setState({data: data});
+            }.bind(this),
+            error: function (xhr, status, err) {
+                console.error(this.props.url, status, err.toString());
+            }.bind(this)
+        });
+    },
+
     getInitialState: function () {
         return {data: []};  // Установка-закрепление изначального состояния data
     },
@@ -39,8 +54,8 @@ var HotNewsBox = React.createClass({ // Создаем лишь часть бо�
             <div className="hotNewsBox">
                 Hello, world! Imma HotNewsBox!
                 <h1>HotNews</h1>  /*Оболочка познакомилась со своими компонентами*/
-                <HotNewsList data={this.state.data}/> /*Берем текущее состояние data/
-                <HotNewsForm /> /**/
+                <HotNewsList data={this.state.data}/> /*Берем текущее состояние data*/
+                <HotNewsForm onNewsSubmit={this.handleNewsSubmit()}/>
             </div>
         );
     }
@@ -89,7 +104,7 @@ var HotNewsForm = React.createClass({
         if (!text || !author) { /*Если какая-то из строчек пустая, форма некорректная - выходим*/
             return;
         }
-        //TODO: send request to the server
+        this.props.onNewsSubmit({author: author, text: text});
         this.setState({author: '', text: ''}); /*Очистили значения форм после отправки на сервер*/
     },
 
@@ -123,7 +138,7 @@ var HotNews = React.createClass({
                 <h2 className="newsAuthor">
                     {this.props.author} /*Возьмет то, что мы передадим ему в автора? Родитель HotNewsList даст*/
                 </h2>
-                {this.props.children} /*Возьмет то, что будет во вложенной фигне*/
+                {this.props.children} /*Возьмет то, что будет во вложенной части*/
             </div>
         );
     }
