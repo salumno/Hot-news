@@ -70,17 +70,39 @@ var HotNewsList = React.createClass({
 });
 
 var HotNewsForm = React.createClass({
+    getInitialState: function () {
+      return {author: '', text: ''};
+    },
+
+    handleAuthorChange: function (e) { /*Ловим изменения автора*/
+        this.setState({author: e.target.value});
+    },
+
+    handleTextChange: function (e) { /*Ловим изменение текста*/
+        this.setState({text: e.target.value});
+    },
 
     render: function () {
         return (
-            <div className="hotNewsForm">
-                Hello! I'm HotNewsForm!
-            </div>
+            <form className="hotNewsForm">
+                <input
+                    type="text"
+                    placeholder="Your name?"
+                    value={this.state.author} /*Учитываем изменения*/
+                    onChange{this.handleAuthorChange}
+                />
+                <input
+                    type="text"
+                    placeholder="What is the hottest news today?"
+                    value={this.state.text}
+                    onChange={handleTextChange}
+                />
+                <input type="submit" value="POST" />
+            </form>
         );
     }
 
 });
-// Создали "внутренности/скелет" нашего бокса.
 
 var HotNews = React.createClass({
 
