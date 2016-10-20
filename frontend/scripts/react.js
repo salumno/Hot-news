@@ -82,14 +82,25 @@ var HotNewsForm = React.createClass({
         this.setState({text: e.target.value});
     },
 
+    hundleSubmit: function (e) {
+        e.preventDefault(); /*Говорим браузеру, что делать мы. Метод останавливает стандартные действия браузера*/
+        var author = this.state.author.trim(); /*Убираем незначащие пробелы*/
+        var text = this.state.text.trim();
+        if (!text || !author) { /*Если какая-то из строчек пустая, форма некорректная - выходим*/
+            return;
+        }
+        //TODO: send request to the server
+        this.setState({author: '', text: ''}); /*Очистили значения форм после отправки на сервер*/
+    },
+
     render: function () {
         return (
-            <form className="hotNewsForm">
+            <form className="hotNewsForm" onSubmit={this.handleSubmit}>
                 <input
                     type="text"
                     placeholder="Your name?"
                     value={this.state.author} /*Учитываем изменения*/
-                    onChange{this.handleAuthorChange}
+                    onChange{this.handleAuthorChange} /*Учитываем изменения*/
                 />
                 <input
                     type="text"
