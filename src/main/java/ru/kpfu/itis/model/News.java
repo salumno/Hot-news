@@ -1,4 +1,4 @@
-package ru.kpfu.itis.modal;
+package ru.kpfu.itis.model;
 
 import java.time.LocalDateTime;
 

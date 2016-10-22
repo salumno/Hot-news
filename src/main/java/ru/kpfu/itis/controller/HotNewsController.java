@@ -4,9 +4,8 @@ package ru.kpfu.itis.controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import ru.kpfu.itis.modal.News;
+import ru.kpfu.itis.model.News;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
