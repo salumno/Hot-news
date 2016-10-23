@@ -10,3 +10,32 @@ ul {
     padding: 20px;
     margin: 5px;
 }
+
+.hotNews {
+    background-color: #46fff3;
+}
+
+.newsTitle {
+    text-align: center;
+    color: darkgrey;
+}
+
+.newsAuthor {
+    text-align: right;
+    padding-right: 20px;
+    color: #ff2ce9;
+}
+
+.newsID {
+    color: #1cfff0;
+}
+
+.newsText {
+    size: 50px;
+    color: black;
+    padding: 20px;
+}
+
+.newsDate {
+    color: black;
+}

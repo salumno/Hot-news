@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import ru.kpfu.itis.model.News;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,6 +22,7 @@ public class HotNewsController {
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
     public List<News> addNews(News newNews) {
+        //TODO Add date in readable format
         newNews.setId(news.size()+1);
         news.add(newNews);
         return news;
