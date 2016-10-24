@@ -49,7 +49,7 @@ var HotNewsList = React.createClass({
     render: function () {
         var newsNode = this.props.data.map(function (hotNews) {
             return (
-                <HotNews title={hotNews.title} author={hotNews.author} num={hotNews.id} date={hotNews.date} key={hotNews.id}>
+                <HotNews title={hotNews.title} author={hotNews.author} date={hotNews.date} key={hotNews.id}>
                     {hotNews.text}
                 </HotNews>
             );
@@ -99,7 +99,7 @@ var HotNewsForm = React.createClass({
                 />
                 <input
                     type="text"
-                    placeholder="What is the hottest news today?"
+                    placeholder="What's the hottest news today?"
                     value={this.state.text}
                     onChange={this.handleTextChange}
                 />
@@ -109,7 +109,7 @@ var HotNewsForm = React.createClass({
                     value={this.state.author}
                     onChange={this.handleAuthorChange}
                 />
-                <input type="submit" value="POST" />
+                <input type="submit" value="Send" />
             </form>
         );
     }
@@ -129,9 +129,6 @@ var HotNews = React.createClass({
                 <p className="newsAuthor">
                     This shit wrote-
                     {this.props.author}
-                </p>
-                <p className="newsDate">
-                    {this.props.date}
                 </p>
             </div>
         );
