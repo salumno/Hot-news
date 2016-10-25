@@ -17,14 +17,14 @@ public class HotNewsController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public List<News> newsPrint() {
-        return news; // Return List
+        return news;
     }
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
     public List<News> addNews(News newNews) {
         //TODO Add date in readable format
         newNews.setId(news.size()+1);
-        news.add(newNews);
+        news.add(0, newNews);
         return news;
     }
 

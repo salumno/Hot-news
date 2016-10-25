@@ -1,19 +1,70 @@
+html {
+    /*background: url('xh8i4TA.jpg') no-repeat center center fixed;
+     background-size: cover;
+     background-color: red*/
+    margin: 0;
+}
+.hotNewsBox {
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    font-family: "Open Sans", sans-serif;
+}
+h3 {
+    margin: 0;
+    padding-top: 3%;
+}
+
+.hotNewsForm {
+    text-align: left;
+    /*padding-left: 60%;
+    padding-bottom: 20px;*/
+    float: right;
+    width: 40%;
+    margin-right: 5%;
+}
+
+.headerP{
+    text-align: left;
+    /*padding-right: 45%;
+    padding-left: 4%;*/
+    float: left;
+    width: 45%;
+    margin-left: 7%;
+    margin-top: 3%;
+}
 .title{
-    text-align: center;
-    /*border: 2px solid;*/
+    text-align: left;
+    color: white;
+    font-size:  100pt;
+    margin: 0;
+    size: 100%;
+    padding-left: 5%;
+    padding-top: 5%;
 }
-ul {
-    list-style-type: none;
+p {
+    font-family: "Open Sans", sans-serif;
 }
-.news li{
-    /*border: 2px solid;*/
-    padding: 20px;
-    margin: 5px;
+
+.header {
+    background-color: #FFD700;
+    margin: 0;
+    padding-left: 60px;
+    display:inline-block;
+    vertical-align: bottom;
+    margin-bottom: 20px;
 }
 
 .hotNews {
-    background-color: #46fff3;
+    background-color: white;
+    padding: 0;
+    margin-top: 0;
+    margin-left: 20%;
+    margin-right: 20%;
+    clear: both;
+    border: 1px solid darkgrey;
 }
+
 
 .newsTitle {
     text-align: center;
@@ -22,9 +73,8 @@ ul {
 
 .newsAuthor {
     text-align: right;
-
     padding-right: 20px;
-    color: #ff2ce9;
+    color: darkslategrey;
 }
 
 .newsID {
@@ -34,9 +84,21 @@ ul {
 .newsText {
     size: 50px;
     color: black;
-    padding: 20px;
+    padding: 3px;
+    padding-top: 5px;
+    padding-right: 3%;
+    padding-left: 3%;
+    text-indent: 30px;
 }
 
 .newsDate {
     color: black;
+}
+
+#footer {
+    text-align: center;
+    color: darkgrey;
+    width: 100%;
+    margin-top: 20px;
+    border-top: 1px solid darkgrey;
 }
