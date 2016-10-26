@@ -100,30 +100,30 @@ var HotNewsForm = React.createClass({
         return (
             <div className="form">
                 <form className="hotNewsForm" onSubmit={this.handleSubmit}>
-                    <p><i>Add news</i></p>
+                    <p><i>Please, add your news!</i></p>
                     <fieldset>
-                        <legend>Заголовок</legend>
+                        <legend>Hot Title</legend>
                         <input
                             type="text"
-                            placeholder="News' title"
+                            placeholder="Your hot title is?"
                             value={this.state.title}
                             onChange={this.handleTitleChange}
                         />
                     </fieldset>
                     <fieldset>
-                        <legend>Текст</legend>
+                        <legend>Hot News</legend>
                             <input className="inputSize"
                                 type="text"
-                                placeholder="What's the hottest news today?"
+                                placeholder="There is the hottest news today?"
                                 value={this.state.text}
                                 onChange={this.handleTextChange}
                             />
                     </fieldset>
                     <fieldset>
-                        <legend>Автор</legend>
+                        <legend>The best author</legend>
                         <input
                             type="text"
-                            placeholder="Your name?"
+                            placeholder="What is your name?"
                             value={this.state.author}
                             onChange={this.handleAuthorChange}
                         />
