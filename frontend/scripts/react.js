@@ -36,10 +36,10 @@ var HotNewsBox = React.createClass({
     },
     render: function () {
         return (
-            <div className="hotNewsBox">
+            <div className="body">
                 <div className="header">
-                    <h1 class="title">Hot News</h1>
-                    <div class="headerP">
+                    <h1 className="title">Hot News</h1>
+                    <div className="headerP">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
                     <HotNewsForm onNewsSubmit={this.handleNewsSubmit}/>
@@ -103,7 +103,6 @@ var HotNewsForm = React.createClass({
                     <p><i>Add news</i></p>
                     <fieldset>
                         <legend>Заголовок</legend>
-                        <label for="title">Что первым увидят люди?</label>
                         <input
                             type="text"
                             placeholder="News' title"
@@ -113,17 +112,15 @@ var HotNewsForm = React.createClass({
                     </fieldset>
                     <fieldset>
                         <legend>Текст</legend>
-                        <label for="text">Ваше сообщение<em>*</em></label>
-                        <input
-                            type="text"
-                            placeholder="What's the hottest news today?"
-                            value={this.state.text}
-                            onChange={this.handleTextChange}
-                        />
+                            <input className="inputSize"
+                                type="text"
+                                placeholder="What's the hottest news today?"
+                                value={this.state.text}
+                                onChange={this.handleTextChange}
+                            />
                     </fieldset>
                     <fieldset>
                         <legend>Автор</legend>
-                        <label for="name">Представтесь</label>
                         <input
                             type="text"
                             placeholder="Your name?"

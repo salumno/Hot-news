@@ -1,34 +1,39 @@
 html {
-    /*background: url('xh8i4TA.jpg') no-repeat center center fixed;
-     background-size: cover;
-     background-color: red*/
     margin: 0;
 }
-.hotNewsBox {
+
+body {
     margin-top: 0;
     margin-left: 0;
     margin-right: 0;
     font-family: "Open Sans", sans-serif;
 }
+
 h3 {
     margin: 0;
     padding-top: 3%;
 }
 
+.inputSize {
+    height: 50px;
+}
+
+input {
+    width: 350px;
+}
+
 .hotNewsForm {
     text-align: left;
-    /*padding-left: 60%;
-    padding-bottom: 20px;*/
     float: right;
     width: 40%;
     margin-right: 5%;
 }
 
 .headerP{
+    color: grey;
     text-align: left;
-    /*padding-right: 45%;
-    padding-left: 4%;*/
     float: left;
+    font-size: 130%;
     width: 45%;
     margin-left: 7%;
     margin-top: 3%;
@@ -38,16 +43,16 @@ h3 {
     color: white;
     font-size:  100pt;
     margin: 0;
-    size: 100%;
     padding-left: 5%;
     padding-top: 5%;
 }
+
 p {
     font-family: "Open Sans", sans-serif;
 }
 
 .header {
-    background-color: #FFD700;
+    background-color: #ffef1e;
     margin: 0;
     padding-left: 60px;
     display:inline-block;
@@ -64,7 +69,6 @@ p {
     clear: both;
     border: 1px solid darkgrey;
 }
-
 
 .newsTitle {
     text-align: center;
